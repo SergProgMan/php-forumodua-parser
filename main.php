@@ -12,7 +12,7 @@ if(!is_dir('data')){
 
 $client = new Client();
 
-$crawler = $client->request('GET', 'https://forumodua.com/');
+$crawler = $client->request('GET', $ini['url']);
 $form = $crawler->selectButton('Вход')->form();
 $crawler = $client->submit($form, array(
     'vb_login_username' => $ini['login'], 
